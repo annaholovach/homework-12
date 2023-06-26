@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
 
-  const date = new Date();
+  const date = new Date().toLocaleString();
   const username = os.userInfo().username;
   const greeting = personalModule.greetUser(username);
 
@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
         <title>Server Greeting</title>
       </head>
       <body>
-        <h1>${date}</h1>
+        <h1>Date of request: ${date}</h1>
         <h1>${greeting}</h1>
       </body>
     </html>
